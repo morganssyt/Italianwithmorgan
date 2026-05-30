@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- EmailJS — guide delivery -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('V34KluSaNSYIgxK2a');</script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -644,24 +647,47 @@
     ['input','change'].forEach(ev=>el.addEventListener(ev,()=>clearE(el,document.getElementById(eid))));
   });
 
-  document.getElementById('aform').addEventListener('submit',e=>{
+  // ── Apply form → Formspree ──
+  document.getElementById('aform').addEventListener('submit',async e=>{
     e.preventDefault();let ok=true;
     const n=document.getElementById('aname'),em=document.getElementById('aemail'),lv=document.getElementById('alevel');
     if(!n.value.trim()){showE(n,document.getElementById('aname-e'));ok=false;}else clearE(n,document.getElementById('aname-e'));
     if(!validEmail(em.value)){showE(em,document.getElementById('aemail-e'));ok=false;}else clearE(em,document.getElementById('aemail-e'));
     if(!lv.value){showE(lv,document.getElementById('alevel-e'));ok=false;}else clearE(lv,document.getElementById('alevel-e'));
     if(!ok)return;
-    document.getElementById('aform-wrap').style.display='none';
-    document.getElementById('aok').classList.add('vis');
+    const btn=document.querySelector('#aform [type=submit]');
+    const orig=btn.textContent;btn.textContent='Sending…';btn.disabled=true;
+    try{
+      const res=await fetch('https://formspree.io/f/mqewwqwr',{
+        method:'POST',body:new FormData(document.getElementById('aform')),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        document.getElementById('aform-wrap').style.display='none';
+        document.getElementById('aok').classList.add('vis');
+      }else{btn.textContent='Error — try again';btn.disabled=false;}
+    }catch{btn.textContent='Network error — try again';btn.disabled=false;}
   });
 
-  document.getElementById('gform').addEventListener('submit',e=>{
+  // ── Guide form → EmailJS (sends PDF link to user's inbox) ──
+  document.getElementById('gform').addEventListener('submit',async e=>{
     e.preventDefault();let ok=true;
     const em=document.getElementById('gemail');
     if(!validEmail(em.value)){showE(em,document.getElementById('gemail-e'));ok=false;}else clearE(em,document.getElementById('gemail-e'));
     if(!ok)return;
-    document.getElementById('gfw').style.display='none';
-    document.getElementById('gok').classList.add('vis');
+    const btn=document.querySelector('#gform [type=submit]');
+    btn.textContent='Sending…';btn.disabled=true;
+    try{
+      await emailjs.send('service_fe2f664','template_l0w6jkn',{
+        to_email:em.value,
+        pdf_link:'https://drive.google.com/file/d/1Hz6-Lp_qT0WFJA_vuuqPrIxwq9nZthxw/view?usp=drive_link'
+      });
+      document.getElementById('gfw').style.display='none';
+      document.getElementById('gok').classList.add('vis');
+    }catch(err){
+      console.error('EmailJS error:',err);
+      btn.textContent='Error — try again';btn.disabled=false;
+    }
   });
 
   document.querySelectorAll('.fq').forEach(btn=>{
