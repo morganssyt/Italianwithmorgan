@@ -106,6 +106,8 @@
     .sn{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
     .sc h3{font-size:1.18rem;font-weight:700;margin-bottom:10px}
     .sc p{font-size:.92rem;color:var(--ink60);line-height:1.7}
+    .sc ul{font-size:.92rem;color:var(--ink60);line-height:1.6;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+    .sc ul strong{color:var(--ink)}
 
     /* PHOTO STRIP */
     .photo-strip{height:340px;overflow:hidden;position:relative}
@@ -125,9 +127,7 @@
     .lbuls{flex:1;display:flex;flex-direction:column;gap:11px;margin-bottom:24px}
     .lbul{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;line-height:1.55}
     .ck{color:var(--green);font-weight:700;font-size:.95rem;flex-shrink:0;margin-top:1px}
-    .lpri{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:700;margin-bottom:20px}
-    .lpri span{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:400;color:var(--ink60)}
-    .lcard .btn{width:100%;justify-content:center}
+    .lcard .btn{width:100%;justify-content:center;margin-top:auto}
     .pricing-note{text-align:center;margin-top:36px;font-size:.95rem;color:var(--ink60);font-style:italic}
 
     /* GUIDE */
@@ -253,7 +253,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <button class="btn bg bsm" onclick="openApply('General')">Apply for a lesson</button>
+      <button class="btn bg bsm" onclick="openApply('General')">Free trial with me</button>
     </div>
     <button class="hbg" id="hbg" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -265,7 +265,7 @@
   <a href="#guide" onclick="closeMob()">Free Guide</a>
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
-  <button class="btn bg bsm" onclick="closeMob();openApply('General')">Apply for a lesson</button>
+  <button class="btn bg bsm" onclick="closeMob();openApply('General')">Free trial with me</button>
 </div>
 
 <!-- ══ HERO — Vespa photo ══ -->
@@ -276,7 +276,7 @@
       <h1 class="hh">Learn Italian the way<br><em>it's actually spoken</em></h1>
       <p class="hs">1:1 lessons with Morgan — a native Italian speaker.<br>Real language, real culture, real progress.</p>
       <div class="hcta">
-        <button class="btn bg" onclick="openApply('General')">Book a lesson</button>
+        <button class="btn bg" onclick="openApply('General')">Schedule your first free trial with me</button>
         <a href="#guide" class="btn bol">Get the free guide →</a>
       </div>
     </div>
@@ -334,18 +334,23 @@
     <div class="sgrid">
       <div class="sc fu d1">
         <div class="sn">1</div>
-        <h3>Apply</h3>
-        <p>Fill in a short form so I can understand your level, goals, and what kind of Italian experience you're after.</p>
+        <h3>Book your free trial</h3>
+        <p>A free 25-minute first lesson to meet, talk, and see your level.</p>
       </div>
       <div class="sc fu d2">
         <div class="sn">2</div>
-        <h3>Get matched to your plan</h3>
-        <p>I review your application and suggest the plan that fits you best — so you're never stuck in something designed for someone else.</p>
+        <h3>Choose your path</h3>
+        <p>Pick the package that fits your goal:</p>
+        <ul>
+          <li><strong>Starter</strong> — one lesson a week. Steady progress at a relaxed pace.</li>
+          <li><strong>Intensive</strong> — two lessons a week. Faster results, real momentum.</li>
+          <li><strong>Conversation Master</strong> — three lessons a week. Full immersion toward fluency.</li>
+        </ul>
       </div>
       <div class="sc fu d3">
         <div class="sn">3</div>
-        <h3>Start speaking</h3>
-        <p>Your first lesson is hands-on from day one. Real Italian, real conversation, real confidence — from the very beginning. ☕</p>
+        <h3>Master Italian</h3>
+        <p>Regular lessons built around you, until you speak with real confidence.</p>
       </div>
     </div>
   </div>
@@ -356,50 +361,47 @@
 <section id="lessons">
   <div class="wrap">
     <div class="sh fu">
-      <p class="lbl">Pricing</p>
+      <p class="lbl">Packages</p>
       <h2 class="st">Choose your <em>plan</em></h2>
-      <p class="ss">Simple, transparent pricing. No hidden fees. No lock-in.</p>
+      <p class="ss">Every package includes real 1:1 attention — pick the rhythm that fits you.</p>
     </div>
     <div class="lgrid">
 
       <div class="lcard fu d1">
         <span class="lemi">🌱</span>
-        <h3>Single Lesson</h3>
-        <p class="llvl">Pay as you go</p>
+        <h3>Starter</h3>
+        <p class="llvl">One lesson a week</p>
         <div class="lbuls">
-          <div class="lbul"><span class="ck">✓</span><span>One 50-minute 1:1 lesson</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>No commitment required</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>Perfect for getting started</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>One 1:1 lesson every week</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Steady progress at a relaxed pace</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Great for building a habit</span></div>
         </div>
-        <div class="lpri">35€ <span>/ lesson</span></div>
-        <button class="btn bog" onclick="openApply('Single Lesson')">Book a lesson</button>
+        <button class="btn bog" onclick="openApply('Starter')">Free trial with me</button>
       </div>
 
       <div class="lcard feat fu d2">
         <div class="fbadge">Most popular 🍋</div>
         <span class="lemi">🍋</span>
-        <h3>Regular</h3>
-        <p class="llvl">4 lessons · Structured progression</p>
+        <h3>Intensive</h3>
+        <p class="llvl">Two lessons a week</p>
         <div class="lbuls">
-          <div class="lbul"><span class="ck">✓</span><span>4 lessons per month</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>Structured progression</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>Personal follow-up</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Two 1:1 lessons every week</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Faster results, real momentum</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Personal follow-up between lessons</span></div>
         </div>
-        <div class="lpri">140€ <span>/ month</span></div>
-        <button class="btn bg" onclick="openApply('Regular')">Book a lesson</button>
+        <button class="btn bg" onclick="openApply('Intensive')">Free trial with me</button>
       </div>
 
       <div class="lcard fu d3">
         <span class="lemi">🏛️</span>
-        <h3>Intensive</h3>
-        <p class="llvl">8 lessons · Full immersion</p>
+        <h3>Conversation Master</h3>
+        <p class="llvl">Three lessons a week</p>
         <div class="lbuls">
-          <div class="lbul"><span class="ck">✓</span><span>8 lessons per month</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>Full immersion</span></div>
-          <div class="lbul"><span class="ck">✓</span><span>For those who want to move fast</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Three 1:1 lessons every week</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>Full immersion toward fluency</span></div>
+          <div class="lbul"><span class="ck">✓</span><span>For those ready to commit fully</span></div>
         </div>
-        <div class="lpri">280€ <span>/ month</span></div>
-        <button class="btn bog" onclick="openApply('Intensive')">Book a lesson</button>
+        <button class="btn bog" onclick="openApply('Conversation Master')">Free trial with me</button>
       </div>
 
     </div>
@@ -487,7 +489,7 @@
     <div class="flist fu d1">
       <div class="fitem">
         <button class="fq" aria-expanded="false">Do I need any Italian to start? <span class="fico" aria-hidden="true">+</span></button>
-        <div class="fans"><div class="fansi">Not at all. The Single Lesson is designed for complete beginners — no prior knowledge needed. We start from scratch and build your confidence in real spoken Italian from day one. All you need is curiosity and a love of Italy.</div></div>
+        <div class="fans"><div class="fansi">Not at all. Every package works for complete beginners — no prior knowledge needed. We start from scratch and build your confidence in real spoken Italian from day one. All you need is curiosity and a love of Italy.</div></div>
       </div>
       <div class="fitem">
         <button class="fq" aria-expanded="false">How do lessons work? <span class="fico" aria-hidden="true">+</span></button>
@@ -495,7 +497,7 @@
       </div>
       <div class="fitem">
         <button class="fq" aria-expanded="false">What is the difference between the plans? <span class="fico" aria-hidden="true">+</span></button>
-        <div class="fans"><div class="fansi"><strong>Single Lesson</strong> is pay-as-you-go — perfect for trying it out with no commitment. <strong>Regular</strong> is 4 lessons per month with a structured progression and personal follow-up. <strong>Intensive</strong> is 8 lessons per month — full immersion for those who want to move fast. Not sure which one? Apply and we'll figure it out together.</div></div>
+        <div class="fans"><div class="fansi"><strong>Starter</strong> is one lesson a week — steady progress at a relaxed pace. <strong>Intensive</strong> is two lessons a week for faster results and real momentum. <strong>Conversation Master</strong> is three lessons a week — full immersion toward fluency. Not sure which one? Book your free trial and we'll figure it out together.</div></div>
       </div>
       <div class="fitem">
         <button class="fq" aria-expanded="false">Can I try a lesson before committing? <span class="fico" aria-hidden="true">+</span></button>
@@ -513,9 +515,9 @@
 <!-- ══ CTA FINAL ══ -->
 <section id="ctaf">
   <div class="wrap" style="position:relative;z-index:1">
-    <h2 class="fu">Apply for a <em>lesson</em></h2>
+    <h2 class="fu">Schedule your first <em>free trial</em></h2>
     <p class="ctaf-sub fu d1">Spots are limited. Tell me where you are with Italian — I'll get back to you within 24 hours.</p>
-    <button class="btn bg fu d2" onclick="openApply('General')" style="font-size:1rem;padding:16px 38px">Apply →</button>
+    <button class="btn bg fu d2" onclick="openApply('General')" style="font-size:1rem;padding:16px 38px">Schedule your first free trial with me</button>
   </div>
   <div class="sbt" style="margin-top:80px"><div class="tc"><span></span><span></span><span></span></div></div>
 </section>
@@ -553,7 +555,7 @@
 <div class="moverlay" id="moverlay" role="dialog" aria-modal="true" aria-labelledby="mtitle" aria-describedby="mdesc">
   <div class="mbox">
     <button class="mcls" id="mcls" aria-label="Close">&times;</button>
-    <p class="mey">Apply for a lesson</p>
+    <p class="mey">Schedule your free trial</p>
     <h3 id="mtitle">Let's find your <em>perfect lesson</em></h3>
     <p class="msub" id="mdesc">Spots are limited. Fill in a few details and I'll get back to you within 24 hours.</p>
     <div id="aform-wrap">
@@ -567,6 +569,15 @@
           <label for="aemail">Email address</label>
           <input type="email" id="aemail" name="email" placeholder="you@example.com" autocomplete="email" />
           <span class="ferr" id="aemail-e">Please enter a valid email address.</span>
+        </div>
+        <div class="fg">
+          <label for="aphone">Phone / WhatsApp number</label>
+          <input type="tel" id="aphone" name="phone" placeholder="+39 333 123 4567" autocomplete="tel" />
+          <span class="ferr" id="aphone-e">Please enter your phone or WhatsApp number.</span>
+        </div>
+        <div class="fg">
+          <label for="ainsta">Instagram <span style="font-weight:400;color:var(--ink60)">(optional)</span></label>
+          <input type="text" id="ainsta" name="instagram" placeholder="@yourusername" autocomplete="off" />
         </div>
         <div class="fg">
           <label for="alevel">Your Italian level</label>
@@ -585,6 +596,7 @@
         </div>
         <button type="submit" class="btn bg" style="width:100%;justify-content:center;margin-top:4px">Apply →</button>
         <p class="fpriv">🔒 Your information stays private. I'll reply within 24 hours.</p>
+        <p class="fpriv">Prefer WhatsApp? Leave your number and I'll message you there.</p>
       </form>
     </div>
     <div class="fok" id="aok">
@@ -642,7 +654,7 @@
   function clearE(el,errEl){el.classList.remove('er');errEl.classList.remove('vis');}
   function clearErrs(form){form.querySelectorAll('input,select,textarea').forEach(el=>el.classList.remove('er'));form.querySelectorAll('.ferr').forEach(el=>el.classList.remove('vis'));}
 
-  [['aname','aname-e'],['aemail','aemail-e'],['alevel','alevel-e'],['gemail','gemail-e']].forEach(([id,eid])=>{
+  [['aname','aname-e'],['aemail','aemail-e'],['aphone','aphone-e'],['alevel','alevel-e'],['gemail','gemail-e']].forEach(([id,eid])=>{
     const el=document.getElementById(id);if(!el)return;
     ['input','change'].forEach(ev=>el.addEventListener(ev,()=>clearE(el,document.getElementById(eid))));
   });
@@ -650,9 +662,10 @@
   // ── Apply form → Formspree ──
   document.getElementById('aform').addEventListener('submit',async e=>{
     e.preventDefault();let ok=true;
-    const n=document.getElementById('aname'),em=document.getElementById('aemail'),lv=document.getElementById('alevel');
+    const n=document.getElementById('aname'),em=document.getElementById('aemail'),ph=document.getElementById('aphone'),lv=document.getElementById('alevel');
     if(!n.value.trim()){showE(n,document.getElementById('aname-e'));ok=false;}else clearE(n,document.getElementById('aname-e'));
     if(!validEmail(em.value)){showE(em,document.getElementById('aemail-e'));ok=false;}else clearE(em,document.getElementById('aemail-e'));
+    if(!ph.value.trim()){showE(ph,document.getElementById('aphone-e'));ok=false;}else clearE(ph,document.getElementById('aphone-e'));
     if(!lv.value){showE(lv,document.getElementById('alevel-e'));ok=false;}else clearE(lv,document.getElementById('alevel-e'));
     if(!ok)return;
     const btn=document.querySelector('#aform [type=submit]');
